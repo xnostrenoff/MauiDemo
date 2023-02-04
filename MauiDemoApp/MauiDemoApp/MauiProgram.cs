@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace MauiDemoApp;
 
@@ -18,6 +19,12 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+
+		builder.Services.AddSingleton<MainPage>();
+		builder.Services.AddSingleton<MainPageViewModel>();
+
+		builder.Services.AddTransient<GesturesPage>();
+		builder.Services.AddTransient<GesturesPageViewModel>();
 
 		return builder.Build();
 	}
