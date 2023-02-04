@@ -52,8 +52,7 @@
                Margin="5,10,5,5"/>
 
         <Button x:Name="_cBackPageButton" Grid.Row="3"
-                Text="Go back"
-                Margin="10"
+                Style="{StaticResource goBackStyle}"
                 Command="{Binding GoBackCommand}"/>
     </Grid>
 </ContentPage>
