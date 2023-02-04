@@ -12,9 +12,13 @@
             Padding="30,10"
             VerticalOptions="Start">
 
-            <Button x:Name="_cGoToGesturesPagesButton"
+            <Button x:Name="_cGoToGesturesButton"
                     Text="Gestures"
-                    Command="{Binding GotToGesturesPageCommand}"/>
+                    Command="{Binding GotToGesturesCommand}"/>
+
+            <Button x:Name="_cGotToMediaTakePictureButton"
+                    Text="Take a photo"
+                    Command="{Binding GotToMediaTakePictureCommand}"/>
 
         </VerticalStackLayout>
     </ScrollView>

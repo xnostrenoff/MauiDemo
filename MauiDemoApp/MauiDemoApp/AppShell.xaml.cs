@@ -7,5 +7,6 @@ public partial class AppShell : Shell
 		InitializeComponent();
 
 		Routing.RegisterRoute (nameof(GesturesPage), typeof(GesturesPage));
+		Routing.RegisterRoute(nameof(MediaTakePicturePage), typeof(MediaTakePicturePage));
 	}
 }

@@ -26,6 +26,9 @@ public static class MauiProgram
 		builder.Services.AddTransient<GesturesPage>();
 		builder.Services.AddTransient<GesturesPageViewModel>();
 
-		return builder.Build();
+		builder.Services.AddTransient<MediaTakePicturePage>();
+        builder.Services.AddTransient<MediaTakePicturePageViewModel>();
+
+        return builder.Build();
 	}
 }

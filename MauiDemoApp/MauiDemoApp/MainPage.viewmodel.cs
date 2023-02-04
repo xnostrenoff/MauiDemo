@@ -13,9 +13,15 @@ namespace MauiDemoApp
         #region Commands
 
         [RelayCommand]
-        public async Task GotToGesturesPage ()
+        public async Task GotToGestures ()
         {
             await Shell.Current.GoToAsync (nameof(GesturesPage));
+        }
+
+        [RelayCommand]
+        public async Task GotToMediaTakePicture()
+        {
+            await Shell.Current.GoToAsync(nameof(MediaTakePicturePage));
         }
 
         #endregion Commands
