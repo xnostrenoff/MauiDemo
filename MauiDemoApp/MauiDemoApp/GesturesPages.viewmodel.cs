@@ -28,8 +28,6 @@ namespace MauiDemoApp
             await Shell.Current.GoToAsync("..");
         }
 
-
-
         #endregion Commands
 
     }
