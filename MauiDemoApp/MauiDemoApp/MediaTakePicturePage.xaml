@@ -8,12 +8,19 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition x:Name="_rowTakePicture" Height="*" />
+            <RowDefinition x:Name="_rowTakePhoto" Height="auto" />            
             <RowDefinition x:Name="_rowGoToBack" Height="auto" />
         </Grid.RowDefinitions>
 
-        <VerticalStackLayout Grid.Row="0" />
+        <Image Grid.Row="0"
+                   Source="{Binding Photo}"/>
 
-        <Button x:Name="_cBackPageButton" Grid.Row="1"
+        <Button x:Name="_cTakePhotoButton" Grid.Row="1"
+                Text="Take photo"
+                Margin="15,15,15,0"
+                Command="{Binding TakePhotoCommand}" />
+
+        <Button x:Name="_cBackPageButton" Grid.Row="2"
                 Style="{StaticResource goBackStyle}" />
     </Grid>
 </ContentPage>
