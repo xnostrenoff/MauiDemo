@@ -10,6 +10,16 @@ namespace MauiDemoApp
 {
     public partial class GesturesPageViewModel : ObservableObject
     {
+        #region Properties
+
+        /// <summary>
+        /// Define 
+        /// </summary>
+        [ObservableProperty]
+        string logText;
+
+        #endregion 
+
         #region Commands
 
         [RelayCommand]
@@ -17,6 +27,8 @@ namespace MauiDemoApp
         {
             await Shell.Current.GoToAsync("..");
         }
+
+
 
         #endregion Commands
 

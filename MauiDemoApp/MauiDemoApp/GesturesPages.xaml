@@ -5,20 +5,53 @@
              x:Class="MauiDemoApp.GesturesPage"
              x:DataType="l:GesturesPageViewModel"
              Title="GesturesPages">
+    <ContentPage.Resources>
+        <Style x:Key="exampleStyle" TargetType="{x:Type Label}">
+            <Setter Property="Background" Value="red" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition x:Name="_rowStackLayout" Height="*"/>
+            <RowDefinition x:Name="_rowAbsoluteLayout" Height="*"/>
             <RowDefinition x:Name="_rowLog" Height="auto"/>
             <RowDefinition x:Name="_rowBackButton" Height="auto" />
         </Grid.RowDefinitions>
 
-        <VerticalStackLayout Grid.Row="0">
-            
-        </VerticalStackLayout>
+        <Border Grid.Row="0">
+            <VerticalStackLayout >
+                <Label Text="Swip me" Style="{StaticResource exampleStyle}" HeightRequest="50">
+                    <Label.GestureRecognizers>
+                        <SwipeGestureRecognizer Direction="Left" Swiped="subSwipHandler" />
+                        <SwipeGestureRecognizer Direction="Right" Swiped="subSwipHandler" />
+                        <SwipeGestureRecognizer Direction="Up" Swiped="subSwipHandler" />
+                        <SwipeGestureRecognizer Direction="Down" Swiped="subSwipHandler" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </VerticalStackLayout>
+        </Border>
 
-        <Label x:Name="_cLogLabel" Grid.Row="1" />
+        <Border Grid.Row="1">
+            <AbsoluteLayout Padding="15">
+                <Label x:Name="_movableLabel" Text="Move me" 
+                       AbsoluteLayout.LayoutFlags="None"
+                       AbsoluteLayout.LayoutBounds="15, 15"
+                       Style="{StaticResource exampleStyle}">
+                    <Label.GestureRecognizers>
+                        <PanGestureRecognizer PanUpdated="subPanGetureMoveHandler" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </AbsoluteLayout>
+        </Border>
 
-        <Button x:Name="_cBackPageButton" Grid.Row="2"
+        <Label x:Name="_cLogLabel" Grid.Row="2"
+               Text="{Binding LogText}"
+               Margin="5,10,5,5"/>
+
+        <Button x:Name="_cBackPageButton" Grid.Row="3"
                 Text="Go back"
                 Margin="10"
                 Command="{Binding GoBackCommand}"/>
