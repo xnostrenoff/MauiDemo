@@ -15,6 +15,7 @@
             <Style x:Key="goBackStyle" TargetType="{x:Type Button}">
                 <Setter Property="Text" Value="Go Back" />
                 <Setter Property="Margin" Value="15" />
+                <Setter Property="Command" Value="{Binding GoToBackCommand}" />
             </Style>
 
             <!--#endregion Styles ***********************************-->

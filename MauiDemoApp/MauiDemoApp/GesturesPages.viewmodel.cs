@@ -23,7 +23,7 @@ namespace MauiDemoApp
         #region Commands
 
         [RelayCommand]
-        async Task GoBack()
+        async Task GoToBack()
         {
             await Shell.Current.GoToAsync("..");
         }
