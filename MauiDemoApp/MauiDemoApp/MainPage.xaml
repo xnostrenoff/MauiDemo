@@ -14,11 +14,18 @@
 
             <Button x:Name="_cGoToGesturesButton"
                     Text="Gestures"
-                    Command="{Binding GotToGesturesCommand}"/>
+                    Command="{Binding GotToPageCommand}"
+                    CommandParameter="{Binding GesturesPageName}"/>
 
             <Button x:Name="_cGotToMediaTakePictureButton"
                     Text="Take a photo"
-                    Command="{Binding GotToMediaTakePictureCommand}"/>
+                    Command="{Binding GotToPageCommand}"
+                    CommandParameter="{Binding TakePicturePageName}"/>
+
+            <Button x:Name="_cGotToSensorsButton"
+                    Text="Sensors"
+                    Command="{Binding GotToPageCommand}"
+                    CommandParameter="{Binding SensorPageName}"/>
 
         </VerticalStackLayout>
     </ScrollView>

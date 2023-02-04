@@ -29,6 +29,9 @@ public static class MauiProgram
 		builder.Services.AddTransient<MediaTakePicturePage>();
         builder.Services.AddTransient<MediaTakePicturePageViewModel>();
 
+        builder.Services.AddTransient<SensorsPage>();
+        builder.Services.AddTransient<SensorsPageViewModel>();
+
         return builder.Build();
 	}
 }
