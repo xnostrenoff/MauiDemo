@@ -14,4 +14,14 @@ public partial class SensorsPage : ContentPage
         _viewmodel = vm;
         BindingContext = vm;
 	}
+
+    private void ContentPage_Disappearing(object sender, EventArgs e)
+    {
+        _viewmodel.CaptureMovements = false;
+    }
+
+    private void ContentPage_Appearing(object sender, EventArgs e)
+    {
+        _viewmodel.CaptureMovements = true;
+    }
 }
