@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,25 @@ namespace MauiDemoApp
         public string SensorPageName
             => nameof(SensorsPage);
 
+        public IEnumerable<string> Pages
+            => _pages;
+        internal readonly ObservableCollection<string> _pages;
+
         #endregion Properties
+
+        #region CTor
+
+        public MainPageViewModel ()
+        {
+            _pages = new ObservableCollection<string>
+            {
+                nameof(GesturesPage),
+                nameof(MediaTakePicturePage),
+                nameof(SensorsPage)
+            };
+        }
+
+        #endregion CTor
 
         #region Commands
 

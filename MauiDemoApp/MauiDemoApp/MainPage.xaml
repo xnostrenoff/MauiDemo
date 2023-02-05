@@ -12,20 +12,17 @@
             Padding="30,10"
             VerticalOptions="Start">
 
-            <Button x:Name="_cGoToGesturesButton"
-                    Text="Gestures"
-                    Command="{Binding GotToPageCommand}"
-                    CommandParameter="{Binding GesturesPageName}"/>
-
-            <Button x:Name="_cGotToMediaTakePictureButton"
-                    Text="Take a photo"
-                    Command="{Binding GotToPageCommand}"
-                    CommandParameter="{Binding TakePicturePageName}"/>
-
-            <Button x:Name="_cGotToSensorsButton"
-                    Text="Sensors"
-                    Command="{Binding GotToPageCommand}"
-                    CommandParameter="{Binding SensorPageName}"/>
+            <CollectionView ItemsSource="{Binding Pages}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Button x:Name="_cGoToGesturesButton" x:DataType="x:String"
+                                Text="{Binding}"
+                                Margin="5"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type l:MainPage}}, Path=BindingContext.GotToPageCommand}"
+                                CommandParameter="{Binding}"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
         </VerticalStackLayout>
     </ScrollView>
