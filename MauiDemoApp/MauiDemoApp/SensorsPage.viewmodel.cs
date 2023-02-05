@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,16 @@ namespace MauiDemoApp
         string accelerations;
 
         #endregion Properties
+
+        #region Commands
+
+        [RelayCommand]
+        async Task GoToBack()
+        {
+            await Shell.Current.GoToAsync("..");
+        }
+
+        #endregion Commands
 
         #region Methods
 

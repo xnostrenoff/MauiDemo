@@ -22,6 +22,6 @@ public partial class SensorsPage : ContentPage
 
     private void ContentPage_Appearing(object sender, EventArgs e)
     {
-        _viewmodel.CaptureMovements = true;
+        _viewmodel.CapCtureMovements = true;
     }
 }
